@@ -282,7 +282,7 @@ Schema::dropIfExists('personas');
 
 Ahora debemos meter mano a la parte html. Para esto hay muchas formar de hacerlo. Crea la carpeta /layouts en resources/views,  dentro de esa carpeta crea un archivo resources/views/layouts/default.blade.php. Asimismo crear en esa misma ubicacion el archivo menu.blade.php. El codigo para cada uno es el siguiente:
 
-<strong>default.blase.php</strong>
+<strong>default.blade.php</strong>
 
 ```php
 <!DOCTYPE html>
@@ -336,7 +336,7 @@ Ahora debemos meter mano a la parte html. Para esto hay muchas formar de hacerlo
 </html>
 ```
 
-<strong>menu.blase.php</strong>
+<strong>menu.blade.php</strong>
 
 ```php
 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical" style="margin-top:10px;">
@@ -354,7 +354,7 @@ Hay varias cosas que comentar en el codigo, primero se esta usando los cdn´s de
 
 Tambien crea la carpeta "personas" y el archivo index.blade.php de tal forma que quede la ruta: resources/views/personas/index.blade.php. En esta misma ubicacion crea los archivos: create.blade.php, edit.blade.php y show.blade.php. Para cada uno el codigo es el siguiente:
 
-<strong>index.blase.php</strong>
+<strong>index.blade.php</strong>
 ```php
 @extends('layouts.default')
 
@@ -445,7 +445,7 @@ Tambien crea la carpeta "personas" y el archivo index.blade.php de tal forma que
 ```
 
 
-<strong>create.blase.php</strong>
+<strong>create.blade.php</strong>
 ```php
 @extends('layouts.default')
 
@@ -541,7 +541,7 @@ Tambien crea la carpeta "personas" y el archivo index.blade.php de tal forma que
 ```
 
 
-<strong>edit.blase.php</strong>
+<strong>edit.blade.php</strong>
 ```php
 @extends('layouts.default')
 
@@ -635,7 +635,7 @@ Tambien crea la carpeta "personas" y el archivo index.blade.php de tal forma que
 ```
 
 
-<strong>show.blase.php</strong>
+<strong>show.blade.php</strong>
 ```php
 @extends('layouts.default')
 
