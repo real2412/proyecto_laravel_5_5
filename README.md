@@ -278,6 +278,42 @@ public function down()
 Schema::dropIfExists('personas');
 }
 ```
+
+# Collective
+
+Para usar algunas directivas que ya no estan disponibles en la nueva version de Laravel, se instala los parquetes collective mediante el siguiente comando:
+
+```bash
+
+composer require "laravelcollective/html":"^5.4.0"
+
+```
+Luego, agregar el nuevo proveedor en el archivo que esta en config/app.php:
+
+
+```php
+
+  'providers' => [
+    // ...
+    Collective\Html\HtmlServiceProvider::class,
+    // ...
+  ],
+  
+  ```
+  
+Finalmente agrega los dos alias:
+
+```php
+  'aliases' => [
+    // ...
+      'Form' => Collective\Html\FormFacade::class,
+      'Html' => Collective\Html\HtmlFacade::class,
+    // ...
+  ],
+```
+
+Para mas informacion de LaravelCollective, <a href="https://laravelcollective.com/">click aqui</a>
+
 # Vista
 
 Ahora debemos meter mano a la parte html. Para esto hay muchas formar de hacerlo. Crea la carpeta /layouts en resources/views,  dentro de esa carpeta crea un archivo resources/views/layouts/default.blade.php. Asimismo crear en esa misma ubicacion el archivo menu.blade.php. El codigo para cada uno es el siguiente:
