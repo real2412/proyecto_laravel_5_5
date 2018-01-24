@@ -725,4 +725,55 @@ Tambien crea la carpeta "personas" y el archivo index.blade.php de tal forma que
 @endsection
 ```
 
+
 En xampp puedes ejecutar ingresando a localhost/gestion_personal/public/personas. Deberias poder acceder a las opciones; sin embargo hay muchas opciones que dejo de lado como poder cambiar el estado o mostrar el nombre de la oficina en el cuadro, esto no deberia complicarse mucho, con buen animo y paciencia todo se puede :D.
+
+# Relaciones en Modelos
+
+<strong>Uno a Uno</strong>
+
+-Modelo Padre.php
+
+public function hijo() {
+  return $this->belongsTo('App\Hijo'); 
+}
+
+-Modelo Hijo.php
+
+public function padre() {
+  return $this->hasOne('App\Padre', 'hijo_id');
+}
+
+<strong>Muchos a Muchos</strong>
+
+-Modelo1.php
+
+public function modelo2()
+{
+  return $this->belongsToMany('App\Modelo2');
+}
+
+-Modelo2.php
+
+public function modelo1()
+{
+  return $this->belongsToMany('App\Modelo1');
+}
+
+<strong>Uno a Muchos</strong>
+
+-Post.php
+
+public function comments()
+{
+  return $this->hasMany('App\Comment');
+}
+
+-Comment.php
+
+public function post()
+{
+  return $this->belongsTo('App\Post');
+}
+
+
