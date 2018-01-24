@@ -733,47 +733,48 @@ En xampp puedes ejecutar ingresando a localhost/gestion_personal/public/personas
 <strong>Uno a Uno</strong>
 
 -Modelo Padre.php
-
+```php
 public function hijo() {
   return $this->belongsTo('App\Hijo'); 
 }
+```
 
 -Modelo Hijo.php
-
+```php
 public function padre() {
   return $this->hasOne('App\Padre', 'hijo_id');
 }
-
+```
 <strong>Muchos a Muchos</strong>
 
 -Modelo1.php
-
+```php
 public function modelo2()
 {
   return $this->belongsToMany('App\Modelo2');
 }
-
+```
 -Modelo2.php
-
+```php
 public function modelo1()
 {
   return $this->belongsToMany('App\Modelo1');
 }
-
+```
 <strong>Uno a Muchos</strong>
 
 -Post.php
-
+```php
 public function comments()
 {
   return $this->hasMany('App\Comment');
 }
-
+```
 -Comment.php
-
+```php
 public function post()
 {
   return $this->belongsTo('App\Post');
 }
-
+```
 
